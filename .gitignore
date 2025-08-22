@@ -1,0 +1,26 @@
+# === Spring Boot Backend ===
+/backend/target/
+/backend/*.jar
+/backend/*.war
+/backend/*.ear
+
+# === Compiled Classes ===
+/backend/**/*.class
+
+# === Logs ===
+/backend/**/*.log
+
+# === IDE Specific Files ===
+# IntelliJ
+/backend/.idea/
+/backend/*.iml
+/backend/out/
+
+
+# === OS Specific ===
+/backend/.DS_Store
+/backend/Thumbs.db
+
+# === Maven Wrapper ===
+/backend/.mvn/wrapper/maven-wrapper.jar
+
