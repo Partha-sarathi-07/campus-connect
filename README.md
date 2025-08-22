@@ -1,2 +1,2 @@
 # Event_Echo
-A web application that allows industries or organizations to create events and let users share posts related to those events. Inspired by LinkedIn’s post-sharing style, but focused on event-based communities.
+This is a social networking web application built for college students and faculty to share and engage with academic and extracurricular activities. Students can post about the events they attended or the projects they have worked on, while others can view, like, and comment on these posts. The platform fosters collaboration, recognition, and knowledge sharing within the campus community.
