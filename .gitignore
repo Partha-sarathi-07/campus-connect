@@ -4,6 +4,9 @@
 /backend/*.war
 /backend/*.ear
 
+/backend/src/main/resources/application.properties
+/backend/src/main/resources/application.yml
+
 # === Compiled Classes ===
 /backend/**/*.class
 
