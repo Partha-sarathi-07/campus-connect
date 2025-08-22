@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --inter: "Inter", sans-serif;
+  --bacground-white: #FBFBFB;
+  --top-bar-background: #F5F5F5;
+  --balck: #222222;
+  --btn-black: #211F1F;
+  --gray: #666666;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--inter);
+}
+
+
+@media screen and (max-width:480px) {
+
+  .main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+  }
+
+  .top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+    font-size: 0.8rem;
+  }
+
+  .sidebar-section {
+    display: none;
+  }
+}
+
+@media screen and (max-width:600px) {
+
+  .main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+  }
+
+  .top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+
+  }
+
+  .sidebar-section {
+    display: none;
+  }
+
+}
+
+
+@media screen and (max-width:768px) {
+  .main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+  }
+  
+  .top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+  }
+
+  .sidebar-section {
+    display: none;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .sidebar-section-title {
+    font-size: 9px;
+    font-weight: 900;
+  }
+
+  .post-btn {
+    width: 130px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sidebar-section-main {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .post-btn {
+    width: 170px;
+    height: 30px;
+  }
+}
