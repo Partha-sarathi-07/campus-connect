@@ -23,4 +23,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Comment> comments;
+
+    @ManyToMany
+    @JoinTable(
+            name = "saved_posts",
+            joinColumns = @JoinColumn(name = "username"),
+            inverseJoinColumns = @JoinColumn(name = "post_id")
+    )
+    private List<Post> savedPosts;
 }

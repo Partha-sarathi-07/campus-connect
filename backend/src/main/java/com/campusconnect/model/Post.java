@@ -37,4 +37,7 @@ public class Post {
 
     @OneToMany(mappedBy = "post")
     private List<Comment> comments;
+
+    @ManyToMany(mappedBy = "savedPosts")
+    private List<User> savedUsers;
 }
