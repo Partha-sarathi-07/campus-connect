@@ -2,7 +2,9 @@ package com.campusconnect.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Value;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -19,10 +21,10 @@ public class User {
     private byte[] profilePhoto;
 
     @OneToMany(mappedBy = "user")
-    private List<Post> posts;
+    private List<Post> posts = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(
