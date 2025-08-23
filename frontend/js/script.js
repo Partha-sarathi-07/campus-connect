@@ -1,4 +1,3 @@
-
 const post_container = document.querySelector(".post-container");
 const post_cancel = document.querySelector(".cancel-btn");
 const upload_post = document.querySelector(".post-upload-btn");
@@ -25,9 +24,10 @@ upload_post.addEventListener("click", function () {
   console.log(textvalue);
   if (textvalue === "") {
     console.log("post Empty ");
-  }else{
+  } else {
     console.log("post uploated");
-    
+    post_container.style.display = "none"
+
   }
 })
 
