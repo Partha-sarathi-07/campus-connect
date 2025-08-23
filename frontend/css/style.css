@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
     --inter: "Inter", sans-serif;
     --bacground-white: #FBFBFB;
     --top-bar-background: #F5F5F5;
+    --post-background: #D9D9D9;
     --balck: #222222;
-    --btn-black:#211F1F;
-    --gray:#666666;
-    --light-black:#7B7B7B;
+    --btn-black: #211F1F;
+    --gray: #666666;
+    --light-black: #7B7B7B;
+    --btn-background: #222222;
 }
 
 * {
@@ -22,11 +25,131 @@
     height: 100vh;
     grid-template-columns: 25% auto 35%;
     gap: 1px;
+    position: relative;
 }
+
+.post-container {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    right: 5%;
+    z-index: 2000;
+}
+
+.post-content {
+    background-color: var(--post-background);
+    height: 65%;
+    width: 45%;
+    border-radius: 16px;
+    padding-top: 16px;
+}
+
+.post-user {
+    display: flex;
+    gap: 6px;
+    padding-left: 16px;
+}
+
+.post-profile {
+    display: flex;
+    gap: 6px;
+}
+
+.post-text-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.post-user-details {
+    font-family: var(--inter);
+}
+
+.post-user-details p {
+    font-size: 10px;
+    color: var(--gray);
+}
+
+.post-text-content textarea {
+    border-radius: 12px;
+    padding: 8px;
+    border: 2px solid black;
+    width: 95%;
+    height: 85%;
+}
+
+/* post upload file */
+.post-upload-file {
+    /* background-color: red; */
+    display: flex;
+    width: 100%;
+    padding-left: 28px;
+}
+
+.post-upload-file input::file-selector-button {
+    width: 30%;
+    height: 32px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.horizontal-line {
+    display: flex;
+    padding-top: 16px;
+}
+
+.horizontal-line-main {
+    height: 1px;
+    width: 100%;
+    background-color: var(--balck);
+}
+
+.post-desiders {
+    padding: 8px 16px 0px 0px;
+    display: flex;
+    gap: 16px;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.cancel-btn {
+    background-color: var(--btn-background);
+    color: var(--bacground-white);
+    width: 100px;
+    height: 35px;
+    border-radius: 16px;
+    border: 1px solid black;
+    font-family: var(--inter);
+    font-size: 16px;
+}
+
+.post-upload-btn {
+    background-color: var(--btn-background);
+    color: var(--bacground-white);
+    width: 100px;
+    height: 35px;
+    border-radius: 16px;
+    border: 1px solid black;
+    font-family: var(--inter);
+    font-size: 16px;
+}
+
+
 
 .top-bar {
     display: none;
 }
+
 /* Side section */
 .sidebar-section {
     background-color: var(--bacground-white);
@@ -34,19 +157,19 @@
     padding: 5px;
     flex-direction: column;
     align-items: center;
-    padding:clamp(1rem,2vw,3rem);
+    padding: clamp(1rem, 2vw, 3rem);
     justify-content: space-between;
     padding-bottom: 100px;
 }
 
-.sidebar-section-main{
+.sidebar-section-main {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 }
 
-.sidebar-section-title{
+.sidebar-section-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,11 +185,9 @@
 }
 
 .navbar-menu li {
-    list-style-type: none;  
+    list-style-type: none;
     display: flex;
     align-items: center;
-    gap: 4px;
-
 }
 
 .navbar-menu li a {
@@ -75,23 +196,89 @@
     font-family: var(--inter);
     font-size: 16px;
     font-weight: 700;
-}
-
-.navbar-menu li img{
-    width: 17px;
-    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
 
 .navbar-menu li a:hover {
     color: var(--balck);
 }
 
-.post-btn{
+.navbar-menu li img {
+    width: 24px;
+    height: 24px;
+}
+
+.home-filled-icon {
+    display: none;
+}
+
+li a:hover .home-outline-icon {
+    display: none;
+}
+
+li a:hover .home-filled-icon {
+    display: inline;
+}
+
+.post-filled-icon {
+    display: none;
+}
+
+li a:hover .post-outline-icon {
+    display: none;
+}
+
+li a:hover .post-filled-icon {
+    display: inline;
+}
+
+.save-filled-icon {
+    display: none;
+}
+
+li a:hover .save-outline-icon {
+    display: none;
+}
+
+
+li a:hover .save-filled-icon {
+    display: inline;
+}
+
+.profile-filled-icon {
+    display: none;
+}
+
+li a:hover .profile-outline-icon {
+    display: none;
+}
+
+li a:hover .profile-filled-icon {
+    display: inline;
+}
+
+.logout-filled-icon {
+    display: none;
+}
+
+li a:hover .logout-outline-icon {
+    display: none;
+}
+
+li a:hover .logout-filled-icon {
+    display: inline;
+}
+
+/* Post */
+.post-btn {
     background-color: var(--btn-black);
     color: var(--bacground-white);
     display: flex;
-    width: 236px;
-    height: 44px;
+    width: 60%;
+    height: 6%;
     border-radius: 24px;
     justify-content: center;
     align-items: center;
@@ -99,13 +286,60 @@
 }
 
 
+
 /* -------------------------------------------------- */
 
-.hero-section{
+.hero-section {
     background-color: var(--bacground-white);
+}
+
+.hero-section-topbar {
+    background-color: var(--top-bar-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 1px;
+    height: 80px;
+}
+
+.hero-section-topbar-searchbar {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 42px;
+    width: 23vw;
+    border: 1px solid black;
+    align-items: center;
+    border-radius: 24px;
+    gap: 6px;
+
+}
+
+.hero-section-topbar img {
+    width: 28px;
+    height: 20px;
+    padding-left: 10px;
+}
+
+.hero-section-topbar-searchbar input {
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 15vw;
+    font-family: var(--inter);
+    font-size: 16px;
+}
+
+.hero-section-topbar-searchbar input::placeholder {
+    color: black;
 }
 
 /* --------------------------------------------------- */
 .comment-section {
-    background-color:var(--bacground-white);
+    background-color: var(--bacground-white);
+}
+
+
+/*  */
+.mobile-footer {
+    display: none;
 }
