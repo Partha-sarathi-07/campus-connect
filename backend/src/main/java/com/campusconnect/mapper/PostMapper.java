@@ -3,13 +3,10 @@ package com.campusconnect.mapper;
 import com.campusconnect.dto.request.PostRequestDTO;
 import com.campusconnect.dto.response.PostResponseDTO;
 import com.campusconnect.model.Post;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PostMapper {
-
-    @Autowired
 
     public PostResponseDTO toDto(Post post) {
         return PostResponseDTO.builder()

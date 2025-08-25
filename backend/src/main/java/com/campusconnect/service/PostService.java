@@ -8,27 +8,28 @@ import com.campusconnect.model.Post;
 import com.campusconnect.model.User;
 import com.campusconnect.repository.PostRepository;
 import jakarta.persistence.EntityManager;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PostService {
-    @Autowired
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
+    private final PostMapper mapper;
+    private final EntityManager entityManager;
 
-    @Autowired
-    private PostMapper mapper;
-
-    @Autowired
-    private EntityManager entityManager;
+    public PostService(PostRepository postRepository,
+                       PostMapper mapper,
+                       EntityManager entityManager) {
+        this.postRepository = postRepository;
+        this.mapper = mapper;
+        this.entityManager = entityManager;
+    }
 
     public List<PostResponseDTO> getAllPosts() {
         List<Post> allPosts = postRepository.findAll();
         return allPosts.stream()
-                    .map(post -> mapper.toDto(post))
+                    .map(mapper::toDto)
                     .toList();
     }
 

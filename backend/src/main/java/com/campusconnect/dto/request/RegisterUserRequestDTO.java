@@ -3,7 +3,8 @@ package com.campusconnect.dto.request;
 import lombok.Data;
 
 @Data
-public class UserRequestDTO {
+public class RegisterUserRequestDTO {
+    private String username;
     private String fullname;
-    private byte[] profilePicture;
+    private String password;
 }
