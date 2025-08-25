@@ -12,96 +12,22 @@
 
 <body>
 
-    <div class="head">
-        <div class="main-container">
+    <div class="main-container">
 
+        <!-- mobile screen -->
+        <div class="mobile-view">
+            <!-- mobile top-bar -->
             <div class="top-bar">
                 <h2>Campus Connect</h2>
                 <img src="./assets/icons/user.png" alt="user" class="user-icon">
             </div>
-            <!---------------------------------------------------------------------------------------------------------------------->
-            <div class="sidebar-section">
 
-                <div class="sidebar-section-main">
-                    <div class="sidebar-section-title">
+            <!-- mobile-content-screen -->
+            <div class="mobile-content"> </div>
 
-                        <h1>Campus Connect</h1>
+            <!-- mobile-navbar-->
 
-                    </div>
-
-                    <nav class="navbar">
-                        <ul class="navbar-menu">
-                            <li>
-                                <a href="#">
-                                    <img src="./assets/icons/home-outline-icon.png" alt="home"
-                                        class="home-outline-icon">
-                                    <img src="./assets/icons/home-filled-icon.png" alt="home" class="home-filled-icon">
-                                    Home
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./assets/icons/post-outlined-icon.png" alt="post"
-                                        class="post-outline-icon">
-                                    <img src="./assets/icons/post-filled-icon.png" alt="post" class="post-filled-icon">
-                                    My Posts
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./assets/icons/save-outline-icon.png" alt="save"
-                                        class="save-outline-icon">
-                                    <img src="./assets/icons/save-filld-icon.png" alt="save" class="save-filled-icon">
-                                    Saved
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./assets/icons/profile-outline-icon.png" alt="profile"
-                                        class="profile-outline-icon">
-                                    <img src="./assets/icons/profile-filled-icon.png" alt="profile"
-                                        class="profile-filled-icon">
-                                    Profile
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./assets/icons/logout-outline-icon.png" alt="logout"
-                                        class="logout-outline-icon">
-                                    <img src="./assets/icons/logout-filled-icon.png" alt="logout"
-                                        class="logout-filled-icon">
-                                    Logout
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="post-btn">
-                    <h5>Post</h5>
-                </div>
-
-            </div>
-            <!----------------------------------------------------------------------------------------------------->
-
-            <div class="hero-section">
-                <div class="hero-section-topbar">
-                    <div class="hero-section-topbar-searchbar">
-                        <img src="./assets/icons/search-filled-icon.png" alt="search-outline-icon"
-                            class="search-outline-icon">
-                        <input type="search" placeholder="search events" class="search-events">
-                    </div>
-                </div>
-            </div>
-
-            <!-- ------------------------------------------------------------------------------------------------ -->
-            <div class="comment-section"></div>
-
-            <div class="mobile-footer">
+            <div class="mobile-navbar">
                 <nav class="navbar">
                     <ul class="navbar-menu">
                         <li>
@@ -143,44 +69,127 @@
                     </ul>
                 </nav>
             </div>
+        </div>
 
-            <div class="post-container">
+        <!---------------------------------------------------------------------------------------------------------------------->
+        <!-- large screens -->
+        <div class="sidebar-section">
 
-                <div class="post-content">
+            <div class="sidebar-section-main">
+                <div class="sidebar-section-title">
 
-                    <div class="post-user">
-                        <div class="post-profile">
-                            <img src="./assets/icons/user.png" alt="user-icon">
-                        </div>
+                    <h1>Campus Connect</h1>
 
-                        <div class="post-user-details">
-                            <h6>Peter Parker</h6>
-                            <p>@peterparker.cs21@bitsathy.ac.in</p>
-                        </div>
+                </div>
+
+                <nav class="navbar">
+                    <ul class="navbar-menu">
+                        <li>
+                            <a href="#">
+                                <img src="./assets/icons/home-outline-icon.png" alt="home" class="home-outline-icon">
+                                <img src="./assets/icons/home-filled-icon.png" alt="home" class="home-filled-icon">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="./assets/icons/post-outlined-icon.png" alt="post" class="post-outline-icon">
+                                <img src="./assets/icons/post-filled-icon.png" alt="post" class="post-filled-icon">
+                                My Posts
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="./assets/icons/save-outline-icon.png" alt="save" class="save-outline-icon">
+                                <img src="./assets/icons/save-filld-icon.png" alt="save" class="save-filled-icon">
+                                Saved
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="./assets/icons/profile-outline-icon.png" alt="profile"
+                                    class="profile-outline-icon">
+                                <img src="./assets/icons/profile-filled-icon.png" alt="profile"
+                                    class="profile-filled-icon">
+                                Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="./assets/icons/logout-outline-icon.png" alt="logout"
+                                    class="logout-outline-icon">
+                                <img src="./assets/icons/logout-filled-icon.png" alt="logout"
+                                    class="logout-filled-icon">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="post-btn">
+                <h5>Post</h5>
+            </div>
+
+        </div>
+        <!----------------------------------------------------------------------------------------------------->
+
+        <div class="hero-section">
+            <div class="hero-section-topbar">
+                <div class="hero-section-topbar-searchbar">
+                    <img src="./assets/icons/search-filled-icon.png" alt="search-outline-icon"
+                        class="search-outline-icon">
+                    <input type="search" placeholder="search events" class="search-events">
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------------------------------------------------------------------------------->
+        <div class="comment-section"></div>
+
+        <!-- ------------------------------------------------------------------------------------------------- -->
+
+        <div class="post-container">
+
+            <div class="post-content">
+
+                <div class="post-user">
+                    <div class="post-profile">
+                        <img src="./assets/icons/user.png" alt="user-icon">
                     </div>
 
-                    <div class="post-text-content">
-                        <textarea class="text-area" placeholder="Type description here.."></textarea>
-                    </div>
-
-                    <div class="post-upload-file">
-                        <input type="file" accept="image/*">
-                    </div>
-
-
-                    <div class="horizontal-line">
-                        <div class="horizontal-line-main"></div>
-                    </div>
-
-                    <div class="post-desiders">
-                        <button class="cancel-btn">Cancel</button>
-                        <button class="post-upload-btn">Post</button>
+                    <div class="post-user-details">
+                        <h6>Peter Parker</h6>
+                        <p>@peterparker.cs21@bitsathy.ac.in</p>
                     </div>
                 </div>
 
+                <div class="post-text-content">
+                    <textarea class="text-area" placeholder="Type description here.."></textarea>
+                </div>
+
+                <div class="post-upload-file">
+                    <input type="file" accept="image/*">
+                </div>
+
+
+                <div class="horizontal-line">
+                    <div class="horizontal-line-main"></div>
+                </div>
+
+                <div class="post-desiders">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="post-upload-btn">Post</button>
+                </div>
             </div>
+
         </div>
     </div>
+
 
 
 

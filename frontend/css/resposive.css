@@ -15,26 +15,17 @@
   margin: 0;
   box-sizing: border-box;
   font-family: var(--inter);
-
-  .search-filled-icon {
-    display: none;
-  }
-
-  li a:hover .search-outlined-icon {
-    display: none;
-  }
-
-  li a:hover .search-filled-icon {
-    display: inline;
-  }
 }
-
 
 @media screen and (max-width:480px) {
   .main-container {
     background-color: var(--bacground-white);
     display: flex;
     height: 100vh;
+  }
+
+  .mobile-view {
+    display: flex;
   }
 
   .top-bar {
@@ -101,95 +92,34 @@
   .post-content {
     display: none;
   }
+
   .post-container {
     display: none;
   }
 }
 
 @media screen and (max-width:600px) {
-
-  .main-container {
-    background-color: var(--bacground-white);
+  .mobile-view {
     display: flex;
-    height: 100vh;
   }
 
   .top-bar {
-    position: fixed;
-    background-color: var(--bacground-white);
-    display: flex;
-    height: 55px;
-    width: 100vw;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(1rem, 2vw, 3rem);
-    box-shadow: 0 0 6px black;
-
+    background-color: red;
+    height: 6vh;
   }
-
-  .sidebar-section {
-    display: none;
-  }
-
-  .hero-section {
-    display: none;
-  }
-
-  .mobile-footer {
-    display: flex;
-    position: relative;
-    align-items: end;
-    justify-content: start;
-    z-index: 999;
-  }
-
-  .navbar {
-    box-shadow: 0px 0px 1px rgb(0, 0, 0);
-    background-color: var(--light-white);
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 55px;
-  }
-
-  .navbar-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 15%;
-    width: 100vw;
-  }
-
-  .navbar-menu li {
-    display: flex;
-    align-items: center;
-  }
-
-  .navbar-menu li a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-   .post-content {
-    display: none;
-  }
-  .post-container {
-    display: none;
-  }
-
 }
-
 
 @media screen and (max-width:768px) {
+
   .main-container {
     background-color: var(--bacground-white);
     display: flex;
     height: 100vh;
+  }
+
+  .mobile-view {
+    display: flex;
+    position: relative;
   }
 
   .top-bar {
@@ -197,6 +127,181 @@
     background-color: var(--bacground-white);
     display: flex;
     height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+    z-index: 2;
+  }
+
+  .mobile-content{
+    z-index: 1;
+    background-color: red;
+    height: 40vh;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: start;
+    z-index: 999;
+  }
+  .sidebar-section {
+    display: none;
+  }
+
+  .hero-section {
+    display: none;
+  }
+
+  .navbar {
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    background-color: var(--light-white);
+    background-color: red;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 55px;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    width: 100vw;
+  }
+
+  .navbar-menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-content {
+    display: none;
+  }
+
+  .post-container {
+    display: none;
+  }
+
+}
+
+
+@media screen and (min-width:769px) and (max-width:930px) {
+  .main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .mobile-view {
+    display: flex;
+  }
+
+  .top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+  }
+
+  .sidebar-section {
+    display: none;
+  }
+
+  .hero-section {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: start;
+    z-index: 999;
+  }
+
+  .navbar {
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    background-color: var(--light-white);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 6vh;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    width: 100vw;
+  }
+
+  .navbar-menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-content {
+    display: none;
+  }
+
+  .post-container {
+    display: none;
+  }
+
+
+}
+
+@media screen and (max-width:1026px) {
+
+  .main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .mobile-view {
+    display: flex;
+  }
+
+  .top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 6vh;
     width: 100vw;
     align-items: center;
     justify-content: space-between;
@@ -252,37 +357,18 @@
     justify-content: center;
   }
 
-   .post-content {
+  .post-content {
     display: none;
   }
+
   .post-container {
     display: none;
   }
 
-
 }
 
-@media (max-width: 992px) {
+@media (max-width: 2400px) {
 
-  .sidebar-section-title {
-    font-size: 9px;
-    font-weight: 900;
-  }
-
-  .post-btn {
-    width: 130px;
-    height: 30px;
-  }
-
-  .post-desiders {
-    display: flex;
-    padding-left: 10px;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 1200px) {
   .sidebar-section-main {
     font-size: 12px;
     font-weight: 600;
