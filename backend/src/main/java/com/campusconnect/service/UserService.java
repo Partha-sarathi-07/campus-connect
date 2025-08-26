@@ -28,8 +28,7 @@ public class UserService {
     }
 
 
-    public UserResponseDTO getUser() {
-        String username = "sarathi@gmail.com";
+    public UserResponseDTO getUser(String username) {
         User user = userRepository
                 .findById(username)
                 .orElseThrow(() -> new UserNotFoundException(username));
@@ -42,4 +41,5 @@ public class UserService {
         user.setPassword(encoder.encode(user.getPassword()));
         return mapper.toDto(userRepository.save(mapper.toModel(user)));
     }
+
 }

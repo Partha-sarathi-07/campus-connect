@@ -18,8 +18,8 @@ public class PostResponseDTO {
     private String fullname;
     private String postDescription;
     private byte[] postImage;
-    private int likeCount;
-    private int commentCount;
-    private int savedCount;
+    private Integer likeCount;
+    private Integer commentCount;
+    private Integer savedCount;
     private LocalDateTime postedTime;
 }

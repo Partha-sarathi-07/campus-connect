@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class CommentRequestDTO {
     private String comment;
-    private int postId;
-    private int parentCommentId;
+    private Integer postId;
+    private Integer parentCommentId;
 }

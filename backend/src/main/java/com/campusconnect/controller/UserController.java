@@ -11,13 +11,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController()
-@RequestMapping("/api/auth")
+@RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     private final UserService userService;
@@ -32,7 +30,7 @@ public class UserController {
         this.jwtService = jwtService;
     }
 
-    @PostMapping("register")
+    @PostMapping("auth/register")
     public ResponseEntity<?> register(@RequestBody RegisterUserRequestDTO user) {
         UserResponseDTO savedUser = userService.saveUser(user);
         return ResponseEntity
@@ -40,7 +38,7 @@ public class UserController {
                 .body(savedUser);
     }
 
-    @PostMapping("login")
+    @PostMapping("auth/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginUserRequestDTO user) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
@@ -51,6 +49,23 @@ public class UserController {
         return ResponseEntity
                 .status(HttpStatus.UNAUTHORIZED)
                 .body(new LoginResponseDTO(null, "Invalid username or password"));
+    }
+
+    @GetMapping("/image/{username}")
+    public ResponseEntity<byte[]> getUserProfilePhoto(@PathVariable String username) {
+        UserResponseDTO user = userService.getUser(username);
+        if (user != null) {
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(user.getProfilePicture());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+    }
+
+    @GetMapping("{username}")
+    public ResponseEntity<UserResponseDTO> getUserDetails(@PathVariable String username) {
+        UserResponseDTO user = userService.getUser(username);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
 }

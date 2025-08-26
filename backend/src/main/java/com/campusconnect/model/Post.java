@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -20,20 +21,23 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int postId;
+    private Integer postId;
 
     @Lob
     private byte[] image;
 
+    @Column(nullable = false)
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "username")
+    @JoinColumn(name = "username", nullable = false)
     private User user;
 
-    private int likes;
+    @Column(nullable = false)
+    private Integer likes = 0;
 
-    @Column(insertable = false, updatable = false)
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "post")

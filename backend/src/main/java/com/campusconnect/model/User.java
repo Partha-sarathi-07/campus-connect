@@ -2,7 +2,6 @@ package com.campusconnect.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Value;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,10 @@ public class User {
     @Id
     private String username;
 
+    @Column(nullable = false)
     private String fullname;
 
+    @Column(nullable = false)
     private String password;
 
     @Lob

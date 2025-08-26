@@ -43,7 +43,14 @@ public class SecurityConfiguration {
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request ->
                         request
-                                .requestMatchers("api/auth/register", "api/auth/login")
+                                .requestMatchers("/api/auth/login",
+                                        "/api/auth/register"
+//                                        "/api/*",
+//                                        "/api/posts/*",
+//                                        "/api/comments/post/*",
+//                                        "/api/comments/comment/*",
+//                                        "/api/posts"
+                                )
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
