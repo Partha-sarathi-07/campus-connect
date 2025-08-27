@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+
 :root {
   --inter: "Inter", sans-serif;
   --bacground-white: #FBFBFB;
@@ -18,17 +19,17 @@
 }
 
 @media screen and (max-width:480px) {
-  .main-container {
+  #main-container {
     background-color: var(--bacground-white);
     display: flex;
     height: 100vh;
   }
 
-  .mobile-view {
+  #mobile-view {
     display: flex;
   }
 
-  .top-bar {
+  #top-bar {
     position: fixed;
     background-color: var(--bacground-white);
     display: flex;
@@ -41,15 +42,15 @@
     font-size: 0.8rem;
   }
 
-  .sidebar-section {
+  #sidebar-section {
     display: none;
   }
 
-  .hero-section {
+  #hero-section {
     display: none;
   }
 
-  .mobile-footer {
+  #mobile-footer {
     display: flex;
     position: relative;
     align-items: end;
@@ -57,7 +58,7 @@
     z-index: 999;
   }
 
-  .navbar {
+  #navbar {
     box-shadow: 0px 0px 1px rgb(0, 0, 0);
     background-color: var(--light-white);
     position: absolute;
@@ -68,7 +69,7 @@
     height: 55px;
   }
 
-  .navbar-menu {
+  #navbar-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -77,33 +78,33 @@
     width: 100vw;
   }
 
-  .navbar-menu li {
+  #navbar-menu li {
     display: flex;
     align-items: center;
   }
 
-  .navbar-menu li a {
+  #navbar-menu li a {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .post-content {
+  #post-content {
     display: none;
   }
 
-  .post-container {
+  #post-container {
     display: none;
   }
 }
 
 @media screen and (max-width:600px) {
-  .mobile-view {
+  #mobile-view {
     display: flex;
   }
 
-  .top-bar {
+  #top-bar {
     background-color: red;
     height: 6vh;
   }
@@ -111,18 +112,18 @@
 
 @media screen and (max-width:768px) {
 
-  .main-container {
+  #main-container {
     background-color: var(--bacground-white);
     display: flex;
     height: 100vh;
   }
 
-  .mobile-view {
+  #mobile-view {
     display: flex;
     position: relative;
   }
 
-  .top-bar {
+  #top-bar {
     position: fixed;
     background-color: var(--bacground-white);
     display: flex;
@@ -135,28 +136,29 @@
     z-index: 2;
   }
 
-  .mobile-content{
+  #mobile-content {
     z-index: 1;
     background-color: red;
     height: 40vh;
   }
 
-  .mobile-navbar {
+  #mobile-navbar {
     display: flex;
     position: relative;
     align-items: end;
     justify-content: start;
     z-index: 999;
   }
-  .sidebar-section {
+
+  #sidebar-section {
     display: none;
   }
 
-  .hero-section {
+  #hero-section {
     display: none;
   }
 
-  .navbar {
+  #navbar {
     box-shadow: 0px 0px 1px rgb(0, 0, 0);
     background-color: var(--light-white);
     background-color: red;
@@ -168,7 +170,7 @@
     height: 55px;
   }
 
-  .navbar-menu {
+  #navbar-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -177,23 +179,23 @@
     width: 100vw;
   }
 
-  .navbar-menu li {
+  #navbar-menu li {
     display: flex;
     align-items: center;
   }
 
-  .navbar-menu li a {
+  #navbar-menu li a {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .post-content {
+  #post-content {
     display: none;
   }
 
-  .post-container {
+  #post-container {
     display: none;
   }
 
@@ -201,18 +203,18 @@
 
 
 @media screen and (min-width:769px) and (max-width:930px) {
-  .main-container {
+  #main-container {
     background-color: var(--bacground-white);
     display: flex;
     height: 100vh;
     overflow-x: hidden;
   }
 
-  .mobile-view {
+  #mobile-view {
     display: flex;
   }
 
-  .top-bar {
+  #top-bar {
     position: fixed;
     background-color: var(--bacground-white);
     display: flex;
@@ -224,15 +226,15 @@
     box-shadow: 0 0 6px black;
   }
 
-  .sidebar-section {
+  #sidebar-section {
     display: none;
   }
 
-  .hero-section {
+  #hero-section {
     display: none;
   }
 
-  .mobile-navbar {
+  #mobile-navbar {
     display: flex;
     position: relative;
     align-items: end;
@@ -240,7 +242,7 @@
     z-index: 999;
   }
 
-  .navbar {
+  #navbar {
     box-shadow: 0px 0px 1px rgb(0, 0, 0);
     background-color: var(--light-white);
     position: absolute;
@@ -251,7 +253,7 @@
     height: 6vh;
   }
 
-  .navbar-menu {
+  #navbar-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -260,23 +262,23 @@
     width: 100vw;
   }
 
-  .navbar-menu li {
+  #navbar-menu li {
     display: flex;
     align-items: center;
   }
 
-  .navbar-menu li a {
+  #navbar-menu li a {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .post-content {
+  #post-content {
     display: none;
   }
 
-  .post-container {
+  #post-container {
     display: none;
   }
 
@@ -285,7 +287,7 @@
 
 @media screen and (max-width:1026px) {
 
-  .main-container {
+  #main-container {
     background-color: var(--bacground-white);
     display: flex;
     height: 100vh;
@@ -293,11 +295,11 @@
     overflow-y: hidden;
   }
 
-  .mobile-view {
+  #mobile-view {
     display: flex;
   }
 
-  .top-bar {
+  #top-bar {
     position: fixed;
     background-color: var(--bacground-white);
     display: flex;
@@ -309,15 +311,15 @@
     box-shadow: 0 0 6px black;
   }
 
-  .sidebar-section {
+  #sidebar-section {
     display: none;
   }
 
-  .hero-section {
+  #hero-section {
     display: none;
   }
 
-  .mobile-footer {
+  #mobile-footer {
     display: flex;
     position: relative;
     align-items: end;
@@ -325,7 +327,7 @@
     z-index: 999;
   }
 
-  .navbar {
+  #navbar {
     box-shadow: 0px 0px 1px rgb(0, 0, 0);
     background-color: var(--light-white);
     position: absolute;
@@ -336,7 +338,7 @@
     height: 55px;
   }
 
-  .navbar-menu {
+  #navbar-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -345,23 +347,23 @@
     width: 100vw;
   }
 
-  .navbar-menu li {
+  #navbar-menu li {
     display: flex;
     align-items: center;
   }
 
-  .navbar-menu li a {
+  #navbar-menu li a {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .post-content {
+  #post-content {
     display: none;
   }
 
-  .post-container {
+  #post-container {
     display: none;
   }
 
@@ -369,12 +371,12 @@
 
 @media (max-width: 2400px) {
 
-  .sidebar-section-main {
+  #sidebar-section-main {
     font-size: 12px;
     font-weight: 600;
   }
 
-  .post-btn {
+  #post-btn {
     width: 170px;
     height: 30px;
   }

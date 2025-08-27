@@ -1,45 +1,47 @@
-const post_container = document.querySelector(".post-container");
-const post_cancel = document.querySelector(".cancel-btn");
-const upload_post = document.querySelector(".post-upload-btn");
-const post = document.querySelector(".post-btn");
-const mobile_user_icon = document.querySelector(".user-icon");
-const search = document.querySelector(".search-events");
+const add_post = document.querySelector("#post-btn");
+const post_container = document.querySelector("#post-container");
+const post_cancel = document.querySelector("#cancel-btn");
+const upload_post = document.querySelector("#post-upload-btn");
+const mobile_user_icon = document.querySelector("#user-icon");
+const search = document.querySelector("#search-events");
 
-// post button
-post.addEventListener("click", function () {
-  console.log("post");
-  post_container.style.display = "flex"
-})
+const readme = document.querySelector("#readme");
+const textareafix = document.querySelector("#text");
+const post_content = document.querySelector("#hero-section-content-box");
 
-// post cancel
-post_cancel.addEventListener("click", function () {
-  console.log("cencel post");
-  post_container.style.display = "none"
+const post_text_area = document.querySelector("#text-area")
 
-})
+const upload_textarea = document.querySelector("#post-text-area");
 
-//post upload
-upload_post.addEventListener("click", function () {
-  const textvalue = document.querySelector(".text-area").value.trim();
-  console.log(textvalue);
-  if (textvalue === "") {
-    console.log("post Empty ");
-  } else {
-    console.log("post uploated");
-    post_container.style.display = "none"
+const hero_option_icon = document.querySelector("#hero-option-icon");
 
-  }
-})
+const hero_section_media = document.querySelector("#hero-section-media")
 
-// mobile user icon
-mobile_user_icon.addEventListener("click", function () {
-  console.log("user");
 
-})
+
+
 
 // search icon
 search.addEventListener("keydown", function (event) {
-  console.log(event.key);
+	console.log(event.key);
 
-}) 
+})
 
+const desc = "lorem commodi rem quae, maiores optio voluptas natus assumenda soluta nostrum nulla repellat ipsam distinctio perspiciatis";
+const sub = desc.split(20);
+console.log(sub);
+const tub = sub.slice(0, 20);
+upload_textarea.textContent = sub;
+// readme
+readme.addEventListener("click", function () {
+	upload_textarea.textContent += desc;
+	readme.textContent = " 	"
+})
+
+
+
+// post-section-option-element
+hero_option_icon.addEventListener("click", function () {
+	console.log("option-icon");
+
+})
