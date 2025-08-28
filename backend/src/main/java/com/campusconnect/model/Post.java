@@ -46,8 +46,9 @@ public class Post {
     @ManyToMany(mappedBy = "savedPosts")
     private List<User> savedUsers = new ArrayList<>();
 
-    public Post(String description, byte[] image) {
+    public Post(String description, byte[] image, User user) {
         this.description = description;
         this.image = image;
+        this.user = user;
     }
 }

@@ -2,12 +2,14 @@ package com.campusconnect.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -36,4 +38,10 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "post_id")
     )
     private List<Post> savedPosts;
+
+    public User(String username, String fullname, byte[] profilePhoto) {
+        this.username = username;
+        this.fullname = fullname;
+        this.profilePhoto = profilePhoto;
+    }
 }

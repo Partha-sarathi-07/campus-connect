@@ -1,10 +1,7 @@
 package com.campusconnect.exception;
 
 import com.campusconnect.exception.base.NotFoundException;
-import com.campusconnect.exception.customException.CommentNotFoundException;
-import com.campusconnect.exception.customException.PostNotFoundException;
-import com.campusconnect.exception.customException.UserAlreadyExistException;
-import com.campusconnect.exception.customException.UserNotFoundException;
+import com.campusconnect.exception.customException.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -34,6 +31,18 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleAuthenticationException(AuthenticationException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("Username or password is incorrect");
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<String> handleUnauthorized(UnauthorizedException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(ex.getMessage());
+    }
+
+    @ExceptionHandler(ImageProcessingException.class)
+    public ResponseEntity<String> handleImageProcessing(ImageProcessingException ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ex.getMessage() + ex.getCause());
     }
 
     @ExceptionHandler(IOException.class)

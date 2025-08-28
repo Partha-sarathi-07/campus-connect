@@ -9,7 +9,6 @@ import com.campusconnect.model.Comment;
 import com.campusconnect.model.Post;
 import com.campusconnect.model.User;
 import com.campusconnect.repository.CommentRepository;
-import com.campusconnect.utils.SecurityUtil;
 import jakarta.persistence.EntityManager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,24 +16,28 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class CommentService {
     private final CommentRepository commentRepository;
     private final EntityManager entityManager;
     private final CommentMapper commentMapper;
     private final PageMapper pageMapper;
+    private final SecurityService securityService;
 
     public CommentService(CommentRepository commentRepository,
                           EntityManager entityManager,
                           CommentMapper commentMapper,
-                          PageMapper pageMapper) {
+                          PageMapper pageMapper,
+                          SecurityService securityService) {
         this.commentRepository = commentRepository;
         this.entityManager = entityManager;
         this.commentMapper = commentMapper;
         this.pageMapper = pageMapper;
+        this.securityService = securityService;
     }
 
-    public PageResponseDTO<CommentResponseDTO> getByPostId(int postId, int page, int size) {
+    public PageResponseDTO<CommentResponseDTO> getCommentByPostId(int postId, int page, int size) {
         Post post = entityManager.getReference(Post.class, postId);
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
         Page<CommentResponseDTO> pageResponseDTOS = commentRepository
@@ -59,7 +62,7 @@ public class CommentService {
         Comment parentComment = commentRequestDTO.getParentCommentId() != null ?
                 entityManager.getReference(Comment.class, commentRequestDTO.getParentCommentId()):
                 null;
-        User user = entityManager.getReference(User.class, SecurityUtil.getCurrentUser().getUsername());
+        User user = entityManager.getReference(User.class, securityService.getCurrentUser().getUsername());
         Comment comment = new Comment(commentRequestDTO.getComment(), post, parentComment, user);
         commentRepository.save(comment);
 

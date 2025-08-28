@@ -12,6 +12,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @RestController()
 @RequestMapping("/api")
@@ -31,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("auth/register")
-    public ResponseEntity<?> register(@RequestBody RegisterUserRequestDTO user) {
+    public ResponseEntity<UserResponseDTO> register(@RequestBody RegisterUserRequestDTO user) {
         UserResponseDTO savedUser = userService.saveUser(user);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -44,28 +47,36 @@ public class UserController {
 
         if (authentication.isAuthenticated())
             return ResponseEntity
-                    .status(HttpStatus.CREATED)
+                    .status(HttpStatus.OK)
                     .body(new LoginResponseDTO(jwtService.generateToken(user.getUsername()), "Login successfull"));
         return ResponseEntity
                 .status(HttpStatus.UNAUTHORIZED)
                 .body(new LoginResponseDTO(null, "Invalid username or password"));
     }
 
-    @GetMapping("/image/{username}")
+    @GetMapping("users/image/{username}")
     public ResponseEntity<byte[]> getUserProfilePhoto(@PathVariable String username) {
         UserResponseDTO user = userService.getUser(username);
-        if (user != null) {
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(user.getProfilePicture());
-        }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        return ResponseEntity.status(HttpStatus.OK).body(user.getProfilePicture());
     }
 
-    @GetMapping("{username}")
+    @GetMapping("users/{username}")
     public ResponseEntity<UserResponseDTO> getUserDetails(@PathVariable String username) {
         UserResponseDTO user = userService.getUser(username);
         return ResponseEntity.status(HttpStatus.OK).body(user);
+    }
+
+    @PutMapping("me/profile")
+    public ResponseEntity<?> updateUserProfile(@RequestPart("user") String fullname, @RequestPart("profilePhoto") MultipartFile profilePhoto) {
+           UserResponseDTO userResponseDTO = userService.updateUser(fullname, profilePhoto);
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(userResponseDTO);
+    }
+
+    @DeleteMapping("users/{username}")
+    public ResponseEntity<?> deleteUser(@PathVariable String username) {
+        userService.deleteUser(username);
+        return ResponseEntity.noContent().build();
     }
 
 }

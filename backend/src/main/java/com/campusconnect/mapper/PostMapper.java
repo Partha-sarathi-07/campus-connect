@@ -21,7 +21,4 @@ public class PostMapper {
                 .build();
     }
 
-    public Post toModel(PostRequestDTO postRequestDTO) {
-        return new Post(postRequestDTO.getDescription(), postRequestDTO.getImage());
-    }
 }

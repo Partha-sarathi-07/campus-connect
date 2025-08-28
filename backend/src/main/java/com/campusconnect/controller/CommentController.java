@@ -22,7 +22,7 @@ public class CommentController {
                                                                                    @RequestParam(defaultValue = "5") int size) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(commentService.getByPostId(postId, page, size));
+                .body(commentService.getCommentByPostId(postId, page, size));
     }
 
     @GetMapping("/{commentId}")
