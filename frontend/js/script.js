@@ -45,3 +45,23 @@ hero_option_icon.addEventListener("click", function () {
 	console.log("option-icon");
 
 })
+
+
+// chose file 
+const fileInput = document.querySelector("#fileInput");
+const fileText = document.querySelector("#fileText");
+
+fileInput.addEventListener("change", function () {
+	console.log("file");
+
+	if (this.files.length > 0) {
+		const fileName = this.files[0].name
+		const changeUpper = fileName.toUpperCase()
+		changeUpper.toUpperCase
+		fileText.textContent = changeUpper;
+	} else {
+		fileText.textContent = "No files"
+	}
+})
+
+

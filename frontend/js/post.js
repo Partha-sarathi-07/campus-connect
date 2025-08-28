@@ -1,9 +1,15 @@
+const addPost = document.querySelector("#post-btn");
+const overlay = document.querySelector(".overlay")
 const like = document.querySelector("#like-btn")
 const comment = document.querySelector("#comment-btn")
 const save = document.querySelector("#save-btn")
 const user_details = document.querySelector("#hero-post-user-details")
 const description = document.querySelector("#post-text-area")
 const hero_section_post_container = document.querySelector("#hero-section-media")
+
+addPost.addEventListener("click",()=>{
+	overlay.style.display = "block"
+})
 
 // Like btn 
 like.addEventListener("click", function () {

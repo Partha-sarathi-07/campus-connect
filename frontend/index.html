@@ -11,9 +11,9 @@
 </head>
 
 <body>
-
+    
     <div id="main-container">
-
+        <div class="overlay"></div>
         <!-- mobile screen -->
         <div id="mobile-view">
             <!-- mobile top-bar -->
@@ -108,8 +108,7 @@
 
                         <li>
                             <a href="#">
-                                <img src="./assets/icons/profile-outline-icon.png" alt="profile"
-                                    id="profileicon">
+                                <img src="./assets/icons/profile-outline-icon.png" alt="profile" id="profileicon">
                                 <!-- <img src="./assets/icons/profile-filled-icon.png" alt="profile"
                                     id="profile-filled-icon"> -->
                                 Profile
@@ -135,7 +134,48 @@
         <!----------------------------------------------------------------------------------------------------->
 
         <div id="hero-section">
+
+            <div id="post-container">
+
+                <div id="post-container-group">
+
+                    <div id="uploadPost-user">
+                        <div id="hero-post-profile">
+                            <img src="./assets/icons/user.png" alt="user-icon">
+                        </div>
+
+                        <div id="hero-post-user-details">
+                            <h6>Peter Parker</h6>
+                            <p>@peterparker.cs21@bitsathy.ac.in</p>
+                        </div>
+                    </div>
+
+                    <div id="uploadPost-text-content">
+                        <div id="uploadPost-text-area">
+                            <textarea id="uploadPost-text-container""></textarea>
+                        </div>
+                    </div>
+
+                    <div id="upload-postFile-selection-container">
+                        <label for="fileInput" id="filename">chose file</label>
+                        <input type="file" id="fileInput" accept="image/*">
+                        <span id="fileText">No file</span>
+                    </div>
+
+                    <div id="horizontal-line"></div>
+
+                    <div id="uploadPost-btn">
+                        <div id="upload-postcancel-btn" class="upload-btn">cancel</div>
+                        <div id="upload-post-btn" class="upload-btn">post</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            
             <div id="hero-section-topbar">
+                <div class="overlay"></div>
                 <div id="hero-section-topbar-searchbar">
                     <img src="./assets/icons/search-filled-icon.png" alt="search-outline-icon" id="search-outline-icon">
                     <input type="search" placeholder="search events" id="search-events">
@@ -171,9 +211,12 @@
                     </div>
 
                     <div id="hero-like-comment">
-                        <a class="group-btn"><img src="./assets/icons/heart-outlined-icon.png" alt="like" id="like-btn">Like</a>
-                        <a class="group-btn"><img src="./assets/icons/message-outlined-icon.png" alt="comment" id="comment-btn">Comment</a>
-                        <a class="group-btn"><img src="./assets/icons/save-outlined-icon.png" alt="save" id="save-btn">Save</a>
+                        <a class="group-btn"><img src="./assets/icons/heart-outlined-icon.png" alt="like"
+                                id="like-btn">Like</a>
+                        <a class="group-btn"><img src="./assets/icons/message-outlined-icon.png" alt="comment"
+                                id="comment-btn">Comment</a>
+                        <a class="group-btn"><img src="./assets/icons/save-outlined-icon.png" alt="save"
+                                id="save-btn">Save</a>
                     </div>
 
                 </div>
@@ -184,12 +227,6 @@
         <div id="comment-section"></div>
 
         <!-- ------------------------------------------------------------------------------------------------- -->
-
-        <div id="post-container">
-            <div class="post-container-group">
-                
-            </div>
-        </div>
 
     </div>
 
