@@ -11,9 +11,8 @@
 </head>
 
 <body>
-    
+
     <div id="main-container">
-        <div class="overlay"></div>
         <!-- mobile screen -->
         <div id="mobile-view">
             <!-- mobile top-bar -->
@@ -152,7 +151,8 @@
 
                     <div id="uploadPost-text-content">
                         <div id="uploadPost-text-area">
-                            <textarea id="uploadPost-text-container""></textarea>
+                            <textarea id="uploadPost-text-container" placeholder="Type description here..."
+                                required></textarea>
                         </div>
                     </div>
 
@@ -173,20 +173,22 @@
 
             </div>
 
-            
+            <!-- Blur background content -->
+            <div class="overlay"></div>
+
             <div id="hero-section-topbar">
-                <div class="overlay"></div>
                 <div id="hero-section-topbar-searchbar">
                     <img src="./assets/icons/search-filled-icon.png" alt="search-outline-icon" id="search-outline-icon">
                     <input type="search" placeholder="search events" id="search-events">
                 </div>
             </div>
 
-            <div id="hero-section-container">
+            <div id="hero-section-main-container">
+
                 <div id="hero-section-content-box">
                     <div id="hero-post-user">
                         <div id="hero-post-profile">
-                            <img src="./assets/icons/user.png" alt="user-icon">
+                            <img src="./assets/icons/user.png" alt="user-icon" loading="lazy" decoding="async">
                         </div>
 
                         <div id="hero-post-user-details">
@@ -207,20 +209,73 @@
                     </div>
 
                     <div id="hero-section-media">
-                        <img src="./assets/images/postimage.png" alt="post">
+                        <img src="./assets/images/postimage.png" alt="post" loading="lazy" decoding="async">
                     </div>
 
                     <div id="hero-like-comment">
-                        <a class="group-btn"><img src="./assets/icons/heart-outlined-icon.png" alt="like"
-                                id="like-btn">Like</a>
-                        <a class="group-btn"><img src="./assets/icons/message-outlined-icon.png" alt="comment"
-                                id="comment-btn">Comment</a>
-                        <a class="group-btn"><img src="./assets/icons/save-outlined-icon.png" alt="save"
-                                id="save-btn">Save</a>
+                        <label id="like-label">
+                            <a class="group-btn"><img src="./assets/icons/heart-outlined-icon.png" alt="like"
+                                    id="like-btn">Like</a>
+                        </label>
+
+                        <label id="comment-label">
+                            <a class="group-btn"><img src="./assets/icons/message-outlined-icon.png" alt="comment"
+                                    id="comment-btn">Comment</a>
+                        </label>
+                        <label id="save-label">
+                            <a class="group-btn"><img src="./assets/icons/save-outlined-icon.png" alt="save"
+                                    id="save-btn">Save</a>
+                        </label>
+                    </div>
+                </div>
+                <div id="hero-section-content-box">
+                    <div id="hero-post-user">
+                        <div id="hero-post-profile">
+                            <img src="./assets/icons/user.png" alt="user-icon" loading="lazy" decoding="async">
+                        </div>
+
+                        <div id="hero-post-user-details">
+                            <h6>Peter Parker</h6>
+                            <p>@peterparker.cs21@bitsathy.ac.in</p>
+                        </div>
+
+                        <div id="hero-post-section-option-icon">
+                            <img src="./assets/icons/options-icon.png" alt="option-icon" id="hero-option-icon">
+                        </div>
                     </div>
 
+                    <div id="hero-post-text-content">
+                        <div id="post-text-area">
+                            <p></p>
+                        </div>
+                        <span id="readme">more...</span>
+                    </div>
+
+                    <div id="hero-section-media">
+                        <img src="./assets/images/postimage.png" alt="post" loading="lazy" decoding="async">
+                    </div>
+
+                    <div id="hero-like-comment">
+                        <label id="like-label">
+                            <a class="group-btn"><img src="./assets/icons/heart-outlined-icon.png" alt="like"
+                                    id="like-btn">Like</a>
+                        </label>
+
+                        <label id="comment-label">
+                            <a class="group-btn"><img src="./assets/icons/message-outlined-icon.png" alt="comment"
+                                    id="comment-btn">Comment</a>
+                        </label>
+                        <label id="save-label">
+                            <a class="group-btn"><img src="./assets/icons/save-outlined-icon.png" alt="save"
+                                    id="save-btn">Save</a>
+                        </label>
+                    </div>
                 </div>
+
+
             </div>
+
+
         </div>
 
         <!-- --------------------------------------------------------------------------------------------------->
@@ -229,7 +284,6 @@
         <!-- ------------------------------------------------------------------------------------------------- -->
 
     </div>
-
 
 
 

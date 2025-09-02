@@ -6,7 +6,7 @@
     --bacground-white: #FBFBFB;
     --top-bar-background: #F5F5F5;
     --post-background: #D9D9D9;
-    --file-selector-baground-color:#e5e5e5;
+    --file-selector-baground-color: #e5e5e5;
     --balck: #222222;
     --btn-black: #211F1F;
     --gray: #666666;
@@ -48,6 +48,7 @@ body {
     min-height: 100%;
     background-color: rgba(207, 207, 207, 0.5);
     display: none;
+    z-index: 4;
 }
 
 #mobile-view {
@@ -169,10 +170,10 @@ body {
 #post-container {
     background-color: var(--bacground-white);
     border-radius: 16px;
-    box-shadow:0 0 8px black;
+    box-shadow: 0 0 8px black;
     top: 15%;
     z-index: 2000;
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     height: fit-content;
@@ -220,28 +221,34 @@ body {
     display: flex;
     align-items: center;
     height: fit-content;
-    padding:0 6px ;
-
+    padding: 0 6px;
 }
-#filename{
+
+#filename {
     background-color: var(--file-selector-baground-color);
     width: 8vw;
     height: 5vh;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 8px;
     justify-content: center;
     display: flex;
-    border:1px solid var(--balck) ;
+    border: 1px solid var(--balck);
     margin-right: 10px;
     cursor: pointer;
     transition: 0.1ms;
+    text-align: justify;
 }
-#fileInput[type="file"]{
+
+#fileInput[type="file"] {
+    display: none;
+}
+
+::-webkit-scrollbar {
     display: none;
 }
 
 #horizontal-line {
-    height:1px;
+    height: 1px;
     background-color: var(--gray);
 }
 
@@ -253,6 +260,7 @@ body {
     align-items: center;
     justify-content: end;
 }
+
 .upload-btn {
     background-color: var(--btn-background);
     width: 8vw;
@@ -260,8 +268,8 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin:4px 4px;
-    border-radius: 5px;
+    margin: 4px 4px;
+    border-radius: 18px;
     color: var(--bacground-white);
     cursor: pointer;
 }
@@ -269,10 +277,10 @@ body {
 
 
 #hero-section-topbar {
-    z-index: 999;
+    position:relative;
+    z-index: 3;
     background-color: var(--top-bar-background);
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 1px;
@@ -301,40 +309,48 @@ body {
     border: none;
     outline: none;
     height: 20px;
-    width: 17.5vw;
+    width: 19vw;
     font-family: var(--inter);
     font-size: 16px;
 }
 
 #hero-section-topbar-searchbar input::placeholder {
-    color: black;
+    color: var(--gray);
 }
 
-#hero-section-container {
-    z-index: 2;
-    display: grid;
-    grid-row: auto;
-    position: relative;
-    overflow-y: scroll;
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: var(--balck);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18 6L6 18M6 6l12 12' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 12px 12px;
+    cursor: pointer;
+}   
+
+/* post container */
+#hero-section-main-container {
+    padding-top: 16px;
+    overflow-y: auto;
     scroll-behavior: smooth;
-    height: 85vh;
-}
-
-#hero-section-container::-webkit-scrollbar {
-    display: none;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
 }
 
 #hero-section-content-box {
-    overflow: hidden;
     background-color: var(--bacground-white);
     z-index: 1;
     margin: 1vw 2vw;
     border: 1px solid var(--light-black);
     border-radius: 24px;
-    height: fit-content;
     padding: 16px;
+    display: block;
+    contain: content;
+    will-change: transform;
 }
-
 
 #hero-post-user {
     display: flex;
@@ -346,13 +362,13 @@ body {
 #hero-post-section-option-icon {
     display: flex;
     justify-content: end;
-    width: 50%;
-
+    align-items: center;
+    width: 55%;
 }
 
 #hero-option-icon {
     width: 20px;
-    height: 18px;
+    height: 20px;
 }
 
 #hero-post-profile {
@@ -368,7 +384,7 @@ body {
     gap: 4px;
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
+
 }
 
 #hero-post-user-details p {
@@ -399,7 +415,7 @@ body {
 
 #readme:hover {
     cursor: pointer;
-    color: blue;
+    color: var(--btn-black);
 }
 
 
@@ -433,7 +449,9 @@ body {
     justify-content: space-between;
 }
 
+
 .group-btn {
+    cursor: pointer;
     display: flex;
     font-family: var(inter);
     font-size: 0.8rem;

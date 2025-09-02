@@ -15,7 +15,7 @@ const upload_textarea = document.querySelector("#post-text-area");
 
 const hero_option_icon = document.querySelector("#hero-option-icon");
 
-const hero_section_media = document.querySelector("#hero-section-media")
+const hero_section_media = document.querySelector("#hero-section-media");
 
 
 
