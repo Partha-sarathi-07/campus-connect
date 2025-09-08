@@ -1,15 +1,4 @@
-const likeGroupLabel = document.querySelector(".like-label");
-const commentGroupLabel = document.querySelector(".comment-label");
-const saveGroupLabel = document.querySelector(".save-label");
-const like = document.querySelector(".like-btn");
-const comment = document.querySelector(".comment-btn");
-const save = document.querySelector(".save-btn");
-const user_details = document.querySelector(".hero-post-user-details");
-const description = document.querySelector(".post-text-area");
-const hero_section_post_container = document.querySelector(
-  "#hero-section-media"
-);
-
+const containers = document.querySelectorAll(".hero-like-comment");
 document.addEventListener("DOMContentLoaded", () => {
   displayPost();
   postContainerDisplay();
@@ -17,31 +6,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayPost() {
   // Like btn
-  likeGroupLabel.addEventListener("click", function () {
-    console.log(like);
-    const isLiked = like.src.includes("heart-outlined-icon.png");
 
-    like.src = isLiked
-      ? "./assets/icons/heart-filled-icon.png"
-      : "./assets/icons/heart-outlined-icon.png";
-  });
+  containers.forEach((container) => {
+    const likeGroupLabel = container.querySelector(".like-label");
+    const commentGroupLabel = container.querySelector(".comment-label");
+    const saveGroupLabel = container.querySelector(".save-label");
 
-  // Comment button
-  commentGroupLabel.addEventListener("click", function () {
-    const isComment = comment.src.includes("message-outlined-icon.png");
+    const like = container.querySelector(".like-btn");
+    const comment = container.querySelector(".comment-btn");
+    const save = container.querySelector(".save-btn");
 
-    comment.src = isComment
-      ? "./assets/icons/message-filled-icon.png"
-      : "./assets/icons/message-outlined-icon.png";
-  });
+    const likeCount = container.querySelector(".like-count");
+    const commentCount = container.querySelector(".Comment-count");
 
-  // Save Button
-  saveGroupLabel.addEventListener("click", function () {
-    const isSaved = save.src.includes("save-outlined-icon.png");
+    const user_details = document.querySelector(".hero-post-user-details");
+    const description = document.querySelector("post-text-area");
+    const hero_section_post_container = document.querySelector(
+      "#hero-section-media"
+    );
 
-    save.src = isSaved
-      ? "./assets/icons/save-filled-icon.png"
-      : "./assets/icons/save-outlined-icon.png";
+    // Like button
+    likeGroupLabel.addEventListener("click", () => {
+      const isLiked = like.src.includes("heart-outlined-icon.png");
+      like.src = isLiked
+        ? "./assets/icons/heart-filled-icon.png"
+        : "./assets/icons/heart-outlined-icon.png";
+
+      likeCount = isLiked
+        ? (likeCount.textContent = parseInt(likeCount.textContent) + 1)
+        : (likeCount.textContent = parseInt(likeCount.textContent) - 1);
+    });
+
+    // Comment button
+    commentGroupLabel.addEventListener("click", () => {
+      const isComment = comment.src.includes("message-outlined-icon.png");
+      comment.src = isComment
+        ? "./assets/icons/message-filled-icon.png"
+        : "./assets/icons/message-outlined-icon.png";
+
+      commentCount = isComment
+        ? (commentCount.textContent = parseInt(commentCount.textContent) + 1)
+        : (commentCount.textContent = parseInt(commentCount.textContent) - 1);
+    });
+
+    // Save button
+    saveGroupLabel.addEventListener("click", () => {
+      const isSaved = save.src.includes("save-outlined-icon.png");
+      save.src = isSaved
+        ? "./assets/icons/save-filled-icon.png"
+        : "./assets/icons/save-outlined-icon.png";
+    });
   });
 
   // Add Post button

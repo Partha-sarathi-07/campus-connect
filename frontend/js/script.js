@@ -1,21 +1,22 @@
-const add_post = document.querySelector("#post-btn");
-const post_container = document.querySelector("#post-container");
-const post_cancel = document.querySelector("#cancel-btn");
-const upload_post = document.querySelector("#post-upload-btn");
-const mobile_user_icon = document.querySelector("#user-icon");
+
+const add_post = document.querySelectorAll("#post-btn");
+const post_container = document.querySelectorAll("#post-container");
+const post_cancel = document.querySelectorAll("#cancel-btn");
+const upload_post = document.querySelectorAll("#post-upload-btn");
+const mobile_user_icon = document.querySelectorAll("#user-icon");
 const search = document.querySelector("#search-events");
 
 const readme = document.querySelector(".readme");
-const textareafix = document.querySelector("#text");
-const post_content = document.querySelector("#hero-section-content-box");
+const textareafix = document.querySelectorAll("#text");
+const post_content = document.querySelectorAll("#hero-section-content-box");
 
-const post_text_area = document.querySelector("#text-area");
+const post_text_area = document.querySelectorAll("#text-area");
 
-const upload_textarea = document.querySelector(".post-text-area");
+const upload_textarea = document.querySelectorAll(".post-text-area");
 
 const hero_option_icon = document.querySelector(".hero-option-icon");
 
-const hero_section_media = document.querySelector("#hero-section-media");
+const hero_section_media = document.querySelectorAll("#hero-section-media");
 
 // search icon
 search.addEventListener("keydown", function (event) {
@@ -41,7 +42,7 @@ hero_option_icon.addEventListener("click", function () {
 
 // chose file
 const fileInput = document.querySelector("#fileInput");
-const fileText = document.querySelector(".fileText");
+const fileText = document.querySelectorAll(".fileText");
 
 let selectedFile = null;
 fileInput.addEventListener("change", function (event) {
