@@ -2,9 +2,9 @@
 const top_bar = document.querySelector("#top-bar");
 const hero_section_profile = document.querySelector("#hero-post-profile");
 
-// Mobile user icon
+// user icon
 async function userProfile() {
-  const image = await fetch("http://192.168.1.40:8080/api/sarathi@gmail.com")
+  const image = await fetch("http://localhost:8080/api/posts")
     .then(response => response.blob())
     .then(blob => {
       const imageUrl = URL.createObjectURL(blob)

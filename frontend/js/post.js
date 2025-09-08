@@ -1,16 +1,11 @@
-const addPost = document.querySelector("#post-btn");
-const overlay = document.querySelector(".overlay");
-const uploadPost = document.querySelector("#upload-post-btn");
-const cancelPost = document.querySelector("#upload-postcancel-btn");
-const postContainer = document.querySelector("#post-container");
-const likeGroupLabel = document.querySelector("#like-label");
-const commentGroupLabel = document.querySelector("#comment-label");
-const saveGroupLabel = document.querySelector("#save-label");
-const like = document.querySelector("#like-btn");
-const comment = document.querySelector("#comment-btn");
-const save = document.querySelector("#save-btn");
-const user_details = document.querySelector("#hero-post-user-details");
-const description = document.querySelector("#post-text-area");
+const likeGroupLabel = document.querySelector(".like-label");
+const commentGroupLabel = document.querySelector(".comment-label");
+const saveGroupLabel = document.querySelector(".save-label");
+const like = document.querySelector(".like-btn");
+const comment = document.querySelector(".comment-btn");
+const save = document.querySelector(".save-btn");
+const user_details = document.querySelector(".hero-post-user-details");
+const description = document.querySelector(".post-text-area");
 const hero_section_post_container = document.querySelector(
   "#hero-section-media"
 );
@@ -19,24 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   displayPost();
   postContainerDisplay();
 });
-
-function postContainerDisplay() {
-  addPost.addEventListener("click", function () {
-    postContainer.style.display = "flex";
-    overlay.style.display = "block";
-  });
-
-  uploadPost.addEventListener("click", function () {
-    postContainer.style.display = "none";
-    overlay.style.display = "none";
-  });
-
-  cancelPost.addEventListener("click", function () {
-    postContainer.style.display = "none";
-    overlay.style.display = "none";
-  });
-  
-}
 
 function displayPost() {
   // Like btn
@@ -68,9 +45,9 @@ function displayPost() {
   });
 
   // Add Post button
-  addPost.addEventListener("click", function () {
-    console.log("post");
-  });
+  // addPost.addEventListener("click", function () {
+  //   console.log("post");
+  // });
 
   // post content container
   async function postShow() {
