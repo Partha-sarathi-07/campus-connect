@@ -33,8 +33,8 @@ function displayPost() {
         : "./assets/icons/heart-outlined-icon.png";
 
       likeCount = isLiked
-        ? (likeCount.textContent = parseInt(likeCount.textContent) + 1)
-        : (likeCount.textContent = parseInt(likeCount.textContent) - 1);
+      ? (likeCount.textContent = parseInt(likeCount.textContent) + 1)
+      : (likeCount.textContent = parseInt(likeCount.textContent) - 1);
     });
 
     // Comment button

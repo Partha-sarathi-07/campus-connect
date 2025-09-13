@@ -21,6 +21,10 @@
 
 @media screen and (max-width:480px) {
 
+  .signUp-group-container {
+    width: 90vw;
+  }
+
   #main-container {
     background-color: var(--bacground-white);
     display: flex;
@@ -146,6 +150,10 @@
 
 @media screen and (max-width:600px) {
 
+  .signUp-group-container {
+    width: 90vw;
+  }
+
   #navbar-menu li:hover {
     background-color: transparent;
   }
@@ -211,6 +219,10 @@
 }
 
 @media screen and (max-width:768px) {
+  .signUp-group-container {
+    width: 90vw;
+    height: 85vh;
+  }
 
   #main-container {
     background-color: var(--bacground-white);
@@ -364,6 +376,10 @@
 
 @media screen and (min-width:769px) and (max-width:930px) {
 
+  .signUp-group-container {
+    width: 90vw;
+  }
+
   #navbar-menu li:hover {
     background-color: transparent;
   }
@@ -447,16 +463,16 @@
     display: none;
   }
 
-   .post-container {
+  .post-container {
     background-color: transparent;
     border: none;
     box-shadow: none;
     /* padding: 8px; */
-   }
+  }
 
-   .post-container-group {
+  .post-container-group {
     padding: 8px;
-   }
+  }
 
   .filename {
     background-color: var(--file-selector-baground-color);
@@ -497,6 +513,10 @@
 }
 
 @media screen and (max-width:1026px) {
+
+  .signUp-group-container {
+    width: 90vw;
+  }
 
   #navbar-menu li:hover {
     background-color: transparent;
@@ -578,7 +598,7 @@
     background-color: transparent;
     border: none;
     box-shadow: none;
-   }
+  }
 
   .filename {
     background-color: var(--file-selector-baground-color);
@@ -616,4 +636,3 @@
   }
 
 }
-
