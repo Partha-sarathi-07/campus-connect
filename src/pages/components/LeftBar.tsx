@@ -12,9 +12,6 @@ import logout from '../../assets/logout.png'
 // import logoutFilled from '../../assets/logoutFilled.png'
 import type { NavItemType } from '../../types/NavItemType';
 
-const navItem = "flex items-center gap-2 hover:bg-[#eee] py-[7px] px-[10px] rounded-4xl cursor-pointer"
-const navItemImg = "w-[25px] h-[25px]"
-const navItemText = "text-[24px] font-bold text-[#666666]"
 
 const navItems:NavItemType[] = [
     {label: "Home", icon: home, path:"/"},
@@ -25,9 +22,11 @@ const navItems:NavItemType[] = [
 ]
 
 
-export default function LeftBar() {
+export default function LeftBar({handlePostClicked}: {handlePostClicked: React.Dispatch<React.SetStateAction<boolean>>}) {
+
+
     return(
-        <div className="flex flex-col pt-[10px] items-center w-[22.5vw] h-screen border-1 min-w-[200px] fixed">
+        <div className="flex flex-col left-0 top-0 pt-[10px] pb-[4vw] items-center w-[22.5vw] h-screen min-w-[200px] fixed">
 
             <div className='flex justify-center mb-[50px]'>
                 <img
@@ -40,20 +39,22 @@ export default function LeftBar() {
             <div className='flex flex-col gap-[1.25vw] list-none'>
                 {
                     navItems.map(item => 
-                        <li key={item.label} className={navItem}>
+                        <li key={item.label} className="flex items-center gap-2 hover:bg-[#eee] active:bg-[#ddd] py-[7px] px-[10px] rounded-4xl cursor-pointer">
                             <img
-                                className={navItemImg}
+                                className="w-[25px] h-[25px]"
                                 src={item.icon} 
                                 alt={item.icon} />
-                            <span className={navItemText}>{item.label}</span>
+                            <span className="text-[24px] font-bold text-[#666666]">{item.label}</span>
                         </li>
                     )
                 }
             </div>
 
-            <button className='text-white px-[6vw] py-[0.6vw] bg-black rounded-4xl font-bold text-xl mt-[25vw]'>
-                Post
-            </button>
+            <div className='flex h-full items-end'>
+                <button onClick={() => handlePostClicked(prev => !prev)} className='text-white px-[6vw] py-[0.6vw] max-h-[50px] bg-black rounded-4xl font-bold text-xl relative bottom-0 cursor-pointer hover:bg-[#222] active:bg-[#444]'>
+                    Post
+                </button>
+            </div>
 
         </div>
     )
