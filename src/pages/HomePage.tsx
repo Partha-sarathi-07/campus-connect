@@ -8,7 +8,7 @@ import AddPost from "./components/AddPost";
 
 export default function HomePage() {
     let [posts, setPosts] = useState<PostType[] | null>(null);
-    let [isPostClicked, setIsPostClicked] = useState<boolean>(false);
+    let [isPostClicked, setIsPostClicked] = useState<boolean>(true);
     useEffect(() => {
         fetch("http://localhost:8080/api/posts")
             .then(resp => resp.json())
@@ -28,7 +28,9 @@ export default function HomePage() {
         <>
             {
                 isPostClicked &&
-                <AddPost closeAddPost={setIsPostClicked}/>
+                <AddPost
+                    postClicked={isPostClicked}
+                    closeAddPost={setIsPostClicked}/>
             }
             <LeftBar handlePostClicked={setIsPostClicked}/>
             <div className="flex flex-col ml-[22.5vw]">
