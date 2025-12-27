@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus-connect</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/resposive.css">
+    <link rel="stylesheet" href="./css/resposive.css">
+</head>
+
+<body>
+
+    <div id="main-container">
+        <!-- mobile screen -->
+        <div class="overlay"></div>
+        <div id="mobile-view">
+            <!-- mobile top-bar -->
+            <div id="top-bar">
+                <h2>Campus Connect</h2>
+                <img src="./assets/icons/user.png" alt="user" id="user-icon">
+            </div>
+
+            <!-- mobile-content-screen -->
+            <div id="mobile-content">
+
+
+
+
+                <!-- Add post container -->
+                <div class="post-container">
+                    <div class="post-container-group">
+
+                        <div class="uploadPost-user">
+                            <div class="hero-post-profile">
+                                <img src="./assets/icons/user.png" alt="user-icon">
+                            </div>
+                            <div class="hero-post-user-details">
+                                <h6>Peter Parker</h6>
+                                <p>@peterparker.cs21@bitsathy.ac.in</p>
+                            </div>
+                        </div>
+
+                        <div class="uploadPost-text-content">
+                            <div class="uploadPost-text-area">
+                                <textarea class="uploadPost-text-container" placeholder="Type description here..."
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="upload-postFile-selection-container">
+                            <label for="fileInput" class="filename">Choose file</label>
+                            <input type="file" id="fileInput" accept="image/*">
+                            <span class="fileText">No file</span>
+                        </div>
+
+                        <div class="horizontal-line"></div>
+
+                        <div class="uploadPost-btn">
+                            <div class="upload-postcancel-btn upload-btn">cancel</div>
+                            <div class="upload-post-btn upload-btn">post</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- mobile-navbar-->
+            <div id="mobile-footer">
+                <nav id="navbar">
+                    <ul id="navbar-menu">
+                        <li id="mobile-nav-home">
+                            <label id="mobile-home-label">
+                                <img src="./assets/icons/home-outline-icon.png" alt="mobile-home-icon"
+                                    id="mobile-home-icon">
+                            </label>
+                        </li>
+
+                        <li id="mobile-nav-search">
+                            <label id="mobile-search-label">
+                                <img src="./assets/icons/search-outline-icon.png" alt="mobile-search-icon"
+                                    id="mobile-search-icon">
+                            </label>
+                        </li>
+
+                        <li id="mobile-nav-addPost">
+                            <label id="mobile-addPost-label">
+                                <img src="./assets/icons/mobile-post-outlined.png" alt="mobile-addPost-icon"
+                                    id="mobile-addPost-icon">
+                            </label>
+                        </li>
+
+                        <li id="mobile-nav-post">
+                            <label id="mobile-post-label">
+                                <img src="./assets/icons/post-outlined-icon.png" alt="mobile-post-icon"
+                                    id="mobile-post-icon">
+                            </label>
+                        </li>
+
+                        <li id="mobile-nav-save">
+                            <label id="mobile-save-label">
+                                <img src="./assets/icons/save-outlined-icon.png" alt="mobile-save-icon"
+                                    id="mobile-save-icon">
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!----------------------------------------------------------------------------------->
+
+        <!-- large screens -->
+        <div id="sidebar-section">
+
+            <div id="sidebar-section-main">
+                <div id="sidebar-section-title">
+
+                    <h1>Campus Connect</h1>
+
+                </div>
+
+                <nav id="navbar">
+                    <ul id="navbar-menu">
+                        <li id="nav-home">
+                            <label id="home-label">
+                                <a href="#" id="home-nav-text">
+                                    <img src="./assets/icons/home-outline-icon.png" alt="home" id="home-icon">
+                                    Home
+                                </a>
+                            </label>
+                        </li>
+
+
+                        <li id="nav-post">
+                            <label id="post-label">
+                                <a href="#" id="post-nav-text">
+                                    <img src="./assets/icons/post-outlined-icon.png" alt="post" id="post-icon">
+                                    My Post
+                                </a>
+                            </label>
+                        </li>
+
+                        <li id="nav-saved">
+                            <label id="saved-label">
+                                <a href="#" id="saved-nav-text">
+                                    <img src="./assets/icons/save-outlined-icon.png" alt="saved" id="saved-icon">
+                                    Saved
+                                </a>
+                            </label>
+                        </li>
+
+                        <li id="nav-profile">
+                            <label id="profile-label">
+                                <a href="#" id="profile-nav-text">
+                                    <img src="./assets/icons/profile-outline-icon.png" alt="profile" id="profile-icon">
+                                    Profile
+                                </a>
+                            </label>
+                        </li>
+
+                        <li id="nav-logout">
+                            <label id="logout-label">
+                                <a href="#" id="logout-nav-text">
+                                    <img src="./assets/icons/logout-outline-icon.png" alt="logout" id="logout-icon">
+                                    Logout
+                                </a>
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="post-btn">
+                <h5>Post</h5>
+            </div>
+
+        </div>
+        <!----------------------------------------------------------------------------------------------------->
+
+        <div id="hero-section">
+
+            <div class="post-container">
+                <div class="post-container-group">
+
+                    <div class="uploadPost-user">
+                        <div class="hero-post-profile">
+                            <img src="./assets/icons/user.png" alt="user-icon">
+                        </div>
+                        <div class="hero-post-user-details">
+                            <h6>Peter Parker</h6>
+                            <p>@peterparker.cs21@bitsathy.ac.in</p>
+                        </div>
+                    </div>
+
+                    <div class="uploadPost-text-content">
+                        <div class="uploadPost-text-area">
+                            <textarea class="uploadPost-text-container" placeholder="Type description here..."
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="upload-postFile-selection-container">
+                        <label for="fileInput" class="filename">Choose file</label>
+                        <input type="file" id="fileInput" accept="image/*">
+                        <span class="fileText">No file</span>
+                    </div>
+
+                    <div class="horizontal-line"></div>
+
+                    <div class="uploadPost-btn">
+                        <div class="upload-postcancel-btn upload-btn">cancel</div>
+                        <div class="upload-post-btn upload-btn">post</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Blur background content -->
+            <div class="overlay"></div>
+
+            <div id="hero-section-topbar">
+                <div id="hero-section-topbar-searchbar">
+                    <img src="./assets/icons/search-filled-icon.png" alt="search-outline-icon" id="search-outline-icon">
+                    <input type="search" placeholder="search events" id="search-events">
+                </div>
+            </div>
+
+            <div class="hero-section-main-container">
+
+                <div class="hero-section-content-box">
+                    <div class="hero-post-user">
+                        <div class="hero-post-profile">
+                            <img src="./assets/icons/user.png" alt="user-icon" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="hero-post-user-details">
+                            <h6>Peter Parker</h6>
+                            <p>@peterparker.cs21@bitsathy.ac.in</p>
+                        </div>
+
+                        <div class="hero-post-section-option-icon">
+                            <img src="./assets/icons/options-icon.png" alt="option-icon" class="hero-option-icon">
+                        </div>
+                    </div>
+
+                    <div class="hero-post-text-content">
+                        <div class="post-text-area">
+                            <p></p>
+                        </div>
+                        <span class="readme">more...</span>
+                    </div>
+
+                    <div class="hero-section-media">
+                        <img src="./assets/images/postimage.png" alt="post" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="hero-like-comment">
+                        <label class="like-label">
+                            <a class="group-btn"><img src="./assets/icons/heart-outlined-icon.png" alt="like"
+                                    class="like-btn">Like<span class="like-count">0</span></a>
+
+                        </label>
+
+                        <label class="comment-label">
+                            <a class="group-btn"><img src="./assets/icons/message-outlined-icon.png" alt="comment"
+                                    class="comment-btn">Comment<span class="Comment-count">0</span></a>
+                        </label>
+                        <label class="save-label">
+                            <a class="group-btn"><img src="./assets/icons/save-outlined-icon.png" alt="save"
+                                    class="save-btn">Save</a>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="hero-section-content-box">
+                    <div class="hero-post-user">
+                        <div class="hero-post-profile">
+                            <img src="./assets/icons/user.png" alt="user-icon" loading="lazy" decoding="async">
+                        </div>
+
+                        <div class="hero-post-user-details">
+                            <h6>Peter Parker</h6>
+                            <p>@peterparker.cs21@bitsathy.ac.in</p>
+                        </div>
+
+                        <div class="hero-post-section-option-icon">
+                            <img src="./assets/icons/options-icon.png" alt="option-icon" class="hero-option-icon">
+                        </div>
+                    </div>
+
+                    <div class="hero-post-text-content">
+                        <div class="post-text-area">
+                            <p></p>
+                        </div>
+                        <span class="readme">more...</span>
+                    </div>
+
+                    <div class="hero-section-media">
+                        <img src="./assets/images/postimage.png" alt="post" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="hero-like-comment">
+                        <label class="like-label">
+                            <a class="group-btn">
+                                <img src="./assets/icons/heart-outlined-icon.png" alt="like" class="like-btn">Like
+                                <span class="like-count">0</span>
+                            </a>
+                        </label>
+
+                        <label class="comment-label">
+                            <a class="group-btn">
+                                <img src="./assets/icons/message-outlined-icon.png" alt="comment"
+                                    class="comment-btn">Comment<span class="Comment-count">0</span> 
+                            </a>
+                        </label>
+
+                        <label class="save-label">
+                            <a class="group-btn">
+                                <img src="./assets/icons/save-outlined-icon.png" alt="save" class="save-btn">Save
+                            </a>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <!-- --------------------------------------------------------------------------------------------------->
+        <div id="comment-section"></div>
+        
+        
+
+        <!-- ------------------------------------------------------------------------------------------------- -->
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./js/script.js"></script>
+    <script src="./js/navigater.js"></script>
+    <script src="./js/post.js"></script>
+    <script src="./js/user.js"></script>
+</body>
+
+</html>

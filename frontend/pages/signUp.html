@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signUp</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/resposive.css">
+</head>
+
+<body>
+  <div class="signUp-main-container">
+    <h2 class="webName">Campus Connect</h2>
+    <div class="signUp-group-container">
+      <h2 class="signUp-title">signup</h2>
+
+      <label class="email label">Email</label>
+      <input type="email" id="email" class="signUpInput" placeholder="JonDoe@gmail.com" required>
+
+      <label class="FullName label">FullName</label>
+      <input type="text" id="fullName" class="signUpInput" placeholder="Jon Doe" required>
+
+      <label class="password label">Password</label>
+      <div class="password-input" id="originalPassword">
+        <input type="password" id="password" class="signinPassword" placeholder="Enter your password" maxlength="25"
+          minlength="8" required>
+        <img src="../assets/icons/visible.png" alt="visibility-icon" class="visibility v-icon">
+      </div>
+
+      <label class="confirmPassword label">Confirm Password</label>
+      <div class="password-input" id="retypedPassword">
+        <input type="password" id="confirmPassword" class="signinPassword" placeholder="Confirm password" maxlength="25"
+          minlength="8" required>
+        <img src="../assets/icons/visible.png" alt="visibility-icon" class="confirmPasswordVisible v-icon">
+      </div>
+
+
+      <button class="register-button">Register</button>
+
+      <p class="already-account-text">Already have an account?<a href="#">Login</a></p>
+
+    </div>
+
+  </div>
+
+  <script src="../js/signUp.js"></script>
+</body>
+
+</html>

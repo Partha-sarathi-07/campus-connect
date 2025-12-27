@@ -1,2 +1,0 @@
-# Campus Connect
-This is a social networking web application built for college students and faculty to share and engage with academic and extracurricular activities. Students can post about the events they attended or the projects they have worked on, while others can view, like, and comment on these posts. The platform fosters collaboration, recognition, and knowledge sharing within the campus community.

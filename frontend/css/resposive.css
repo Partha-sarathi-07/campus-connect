@@ -1,0 +1,638 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+
+:root {
+  --inter: "Inter", sans-serif;
+  --bacground-white: #FBFBFB;
+  --top-bar-background: #F5F5F5;
+  --balck: #222222;
+  --btn-black: #211F1F;
+  --gray: #666666;
+  --light-white: #d9d9d9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--inter);
+}
+
+
+@media screen and (max-width:480px) {
+
+  .signUp-group-container {
+    width: 90vw;
+  }
+
+  #main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+  }
+
+  #mobile-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-top: 55px;
+    margin-bottom: 55px;
+    height: calc(100vh - 110px);
+  }
+
+  #mobile-view {
+    display: flex;
+  }
+
+  #top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+    font-size: 0.8rem;
+  }
+
+  #sidebar-section {
+    display: none;
+  }
+
+  #hero-section {
+    display: none;
+  }
+
+  #mobile-footer {
+    display: flex;
+    position: absolute;
+    align-items: end;
+    justify-content: start;
+    box-shadow: 1 5 6px black;
+    z-index: 69999;
+  }
+
+  #navbar {
+    background-color: var(--light-white);
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 55px;
+  }
+
+  #navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    width: 100vw;
+  }
+
+  #navbar-menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  #navbar-menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .uploadPost-text-container {
+    height: 24vh;
+  }
+
+  .filename {
+    background-color: var(--file-selector-baground-color);
+    width: 25vw;
+    height: 5vh;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    border: 1px solid var(--balck);
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+
+  .uploadPost-btn {
+    margin-top: 5px;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .upload-btn {
+    background-color: var(--btn-background);
+    width: 24vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 4px 4px;
+    border-radius: 18px;
+    color: var(--bacground-white);
+    cursor: pointer;
+  }
+
+
+}
+
+@media screen and (max-width:600px) {
+
+  .signUp-group-container {
+    width: 90vw;
+  }
+
+  #navbar-menu li:hover {
+    background-color: transparent;
+  }
+
+  #mobile-view {
+    display: flex;
+  }
+
+  #mobile-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-top: 55px;
+    margin-bottom: 55px;
+    height: calc(100vh - 110px);
+  }
+
+  #top-bar {
+    background-color: red;
+    height: 6vh;
+  }
+
+  .uploadPost-text-container {
+    height: 24vh;
+    width: 80vw;
+  }
+
+  .filename {
+    background-color: var(--file-selector-baground-color);
+    width: 24vw;
+    height: 4vh;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    border: 1px solid var(--balck);
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+
+  .uploadPost-btn {
+    margin-top: 5px;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .upload-btn {
+    background-color: var(--btn-background);
+    width: 24vw;
+    height: 5vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 4px 4px;
+    border-radius: 18px;
+    color: var(--bacground-white);
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .signUp-group-container {
+    width: 90vw;
+    height: 85vh;
+  }
+
+  #main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+  }
+
+  #mobile-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-top: 55px;
+    margin-bottom: 55px;
+    height: calc(100vh - 110px);
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mobile-view {
+    display: flex;
+    position: relative;
+  }
+
+  #top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+    z-index: 2;
+  }
+
+  #mobile-content {
+    /* background-color: red; */
+    margin-top: 7vh;
+    width: 100vw;
+    display: inline;
+    position: absolute;
+    overflow-y: scroll;
+
+  }
+
+  #mobile-navbar {
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: start;
+    z-index: 1000;
+  }
+
+  #sidebar-section {
+    display: none;
+  }
+
+  #hero-section {
+    display: none;
+  }
+
+  #navbar {
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    background-color: var(--light-white);
+    background-color: red;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 55px;
+  }
+
+  #navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    width: 100vw;
+  }
+
+  #navbar-menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  #navbar-menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-container {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    width: 100%;
+    align-items: center;
+  }
+
+  .post-container-group {
+    background-color: var(--bacground-white);
+    display: grid;
+    width: 100%;
+    border-radius: 8px;
+    grid-template-rows: auto auto auto auto;
+    padding: 8px;
+  }
+
+  .filename {
+    background-color: var(--file-selector-baground-color);
+    width: 24vw;
+    height: 5vh;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    border: 1px solid var(--balck);
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+
+  .uploadPost-btn {
+    margin-top: 5px;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .upload-btn {
+    background-color: var(--btn-background);
+    width: 24vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 4px 4px;
+    border-radius: 18px;
+    color: var(--bacground-white);
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (min-width:769px) and (max-width:930px) {
+
+  .signUp-group-container {
+    width: 90vw;
+  }
+
+  #navbar-menu li:hover {
+    background-color: transparent;
+  }
+
+  #main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #mobile-view {
+    display: flex;
+  }
+
+  #top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+  }
+
+  #sidebar-section {
+    display: none;
+  }
+
+  #hero-section {
+    display: none;
+  }
+
+  #mobile-navbar {
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: start;
+    z-index: 999;
+  }
+
+  #navbar {
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    background-color: var(--light-white);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 6vh;
+  }
+
+  #navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    width: 100vw;
+  }
+
+  #navbar-menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  #navbar-menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #post-content {
+    display: none;
+  }
+
+  #post-container {
+    display: none;
+  }
+
+  .post-container {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    /* padding: 8px; */
+  }
+
+  .post-container-group {
+    padding: 8px;
+  }
+
+  .filename {
+    background-color: var(--file-selector-baground-color);
+    width: 24vw;
+    height: 5vh;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    border: 1px solid var(--balck);
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+
+  .uploadPost-btn {
+    margin-top: 5px;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .upload-btn {
+    background-color: var(--btn-background);
+    width: 24vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 4px 4px;
+    border-radius: 18px;
+    color: var(--bacground-white);
+    cursor: pointer;
+  }
+
+
+}
+
+@media screen and (max-width:1026px) {
+
+  .signUp-group-container {
+    width: 90vw;
+  }
+
+  #navbar-menu li:hover {
+    background-color: transparent;
+  }
+
+  #main-container {
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  #mobile-view {
+    display: flex;
+  }
+
+  #top-bar {
+    position: fixed;
+    background-color: var(--bacground-white);
+    display: flex;
+    height: 6vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 3rem);
+    box-shadow: 0 0 6px black;
+  }
+
+  #sidebar-section {
+    display: none;
+  }
+
+  #hero-section {
+    display: none;
+  }
+
+  #mobile-footer {
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: start;
+    z-index: 999;
+  }
+
+  #navbar {
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    background-color: var(--light-white);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 55px;
+  }
+
+  #navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    width: 100vw;
+  }
+
+  #navbar-menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  #navbar-menu li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-container {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .filename {
+    background-color: var(--file-selector-baground-color);
+    width: 25vw;
+    height: 4vh;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    border: 1px solid var(--balck);
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: justify;
+  }
+
+  .uploadPost-btn {
+    margin-top: 5px;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .upload-btn {
+    background-color: var(--btn-background);
+    width: 18vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 4px 4px;
+    border-radius: 10px;
+    color: var(--bacground-white);
+    cursor: pointer;
+  }
+
+}
